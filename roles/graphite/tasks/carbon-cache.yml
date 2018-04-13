@@ -19,12 +19,17 @@
 
 
 
-# TODO: use systemd instead https://gist.github.com/joemiller/6041941
-- name: Configure carbon-cache init.d script
+- name: Configure carbon-cache init.d script REDHAT (04/2018 untested)
   copy: "src=etc/init.d/carbon-cache.{{ ansible_os_family }} dest=/etc/init.d/carbon-cache mode=0755
     owner=root group=root"
+  when: ansible_os_family == 'RedHat'
 
+
+- name: copy /etc/systemd/system/carbon-cache.service (DEBIAN)
+  copy: "src=etc/systemd/system/carbon-cache.service dest=/etc/systemd/system/carbon-cache.service mode=0755
+    owner=root group=root"
+  when: ansible_os_family == 'Debian'
 
 - name: Start carbon cache
-  shell: systemctl start carbon-cache
-#  service: name=carbon-cache state=running enabled=yes
+  #shell: systemctl start carbon-cache
+  service: name=carbon-cache state=running enabled=yes

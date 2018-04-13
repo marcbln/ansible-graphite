@@ -48,4 +48,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
 
+  config.vm.post_up_message = "
+
+                        done... now open http://192.168.111.77 in your browser
+
+        "
+
+
 end
