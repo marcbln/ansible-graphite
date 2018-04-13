@@ -44,7 +44,7 @@ Testing
 ### Vagrant
 Simply clone this repo and make sure you have Vagrant + Virtual Box installed and...
   1. vagrant up
-  2. visit http://192.168.111.222/
+  2. visit http://192.168.111.77/
   3. :-) 
 
 Vagrant is using Ubuntu 14.04 Trusty Tahr for it's OS.

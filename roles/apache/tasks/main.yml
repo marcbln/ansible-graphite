@@ -13,3 +13,10 @@
   apt: "name={{ item }} state=present update_cache=yes"
   with_items: "{{ apache_pkgs }}"
   when: ansible_os_family == 'Debian'
+
+
+
+# enables the Apache2 module "wsgi"
+- apache2_module:
+    state: present
+    name: wsgi
