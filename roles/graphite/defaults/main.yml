@@ -3,7 +3,7 @@
 graphite_apache_port: 80
 graphite_secret_key: 'SDFkhaoboqqggb1)yR-czZ=JXfZxaQZ-o{s8uAZgC{:R+,*3A0I:KS?a~NJxG'
 
-graphite_django_admin_media: /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin/
+graphite_django_static: /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/
 
 graphite_ldap_enabled: False
 graphite_ldap_uri: "ldap://ldap.mycompany.com:389"    # or ldaps://ldap.mycompany.com:636

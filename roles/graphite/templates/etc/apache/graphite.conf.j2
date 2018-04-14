@@ -35,8 +35,8 @@ Listen {{ graphite_apache_port }}
 
         # XXX In order for the django admin site media to work you
         # must change @DJANGO_ROOT@ to be the path to your django
-        Alias /media/ "{{ graphite_django_admin_media }}"
-        <Location "/media/">
+        Alias /static/ "{{ graphite_django_static }}"
+        <Location "/static/">
                 SetHandler None
         </Location>
 
