@@ -32,13 +32,13 @@
   template: "src=etc/apache/graphite.conf.j2 dest={{ apache_vhost_dest }}/{{ graphite_apache_vhost_name }}
    owner={{ apache_user }} group={{ apache_user }} mode=0644"
   notify:
-    - Reload apache
+    - restart_apache
 
 
 - name: Remove the default apache vhost
   file: "path={{ apache_vhost_dest }}/000-default.conf state=absent"
   notify:
-    - Reload apache
+    - restart_apache
   when: ansible_os_family == 'Debian'
 
 
@@ -46,13 +46,13 @@
   template: src=opt/graphite/webapp/graphite/local_settings.py.j2
     dest=/opt/graphite/webapp/graphite/local_settings.py mode=0644
   notify:
-    - Reload apache
+    - restart_apache
 
 
 - name: Configure graphite.wsgi
   copy: src=opt/graphite/conf/graphite.wsgi dest=/opt/graphite/conf/graphite.wsgi mode=0644
   notify:
-    - Reload apache
+    - restart_apache
 
 
 - name: Include carbon-cache
