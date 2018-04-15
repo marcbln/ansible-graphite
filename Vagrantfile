@@ -52,9 +52,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.post_up_message = "
 
-                        done... now open http://192.168.111.77 in your browser
+        done... now open http://192.168.111.77 in your browser!
 
-        "
+        to create admin-user:
+
+                        vagrant ssh
+                        sudo python /opt/graphite/webapp/graphite/manage.py createsuperuser
+"
 
 
 end
